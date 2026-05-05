@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于平台 — 密网巡哨 TrafficVigil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <div>
+        <p class="eyebrow">Encrypted Traffic Governance Suite</p>
+        <h1>密网巡哨 TrafficVigil</h1>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="index.html">首页</a>
+      <a href="dashboard.html">数据中心</a>
+      <a href="workspace.html">功能中枢</a>
+      <a href="about.html" class="nav-current">关于平台</a>
+    </nav>
+    <button class="ghost-button" onclick="location.href='workspace.html'">进入中枢</button>
+  </header>
+
+  <main class="page-transition">
+    <section class="section">
+      <div class="page-hero">
+        <p class="eyebrow">About the Platform</p>
+        <h2>技术架构与项目亮点</h2>
+        <p>密网巡哨 TrafficVigil 是面向加密即时通信流量的全方位治理平台，以下展示平台的核心技术架构与创新点。</p>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section" id="architecture">
+      <div class="section-heading">
+        <p class="eyebrow">Architecture</p>
+        <h3>技术架构说明</h3>
+      </div>
+      <div class="architecture-grid">
+        <article class="glass arch-card">
+          <h4>特征建模</h4>
+          <p>预训练模型学习通用流量表示，结合对抗噪声增强策略 (RIFA)，在混合环境中保持高精度特征提取能力。支持 150 维融合特征的自动构建与在线更新。</p>
+        </article>
+        <article class="glass arch-card">
+          <h4>流量分类</h4>
+          <p>以 VPN 分离和加密即时通信识别为入口，衔接协议解析、应用归因与统计输出。支持 TLS 1.3、QUIC、WireGuard 等新型协议的深度解析。</p>
+        </article>
+        <article class="glass arch-card">
+          <h4>行为关联</h4>
+          <p>以图神经网络 (GATv2) 完成包级与流级双图建模，再将行为分类结果映射到用户-设备-群组三维关系图谱，实现端到端溯源。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Protocol Support -->
+    <section class="section" id="protocols">
+      <div class="section-heading">
+        <p class="eyebrow">Protocol Support</p>
+        <h3>全协议兼容矩阵</h3>
+        <p>平台支持主流加密通信协议的识别与解析，并保留一键扩展新协议的入口。</p>
+      </div>
+      <div class="tag-cloud">
+        <span class="tag featured">TLS 1.3</span>
+        <span class="tag featured">QUIC</span>
+        <span class="tag featured">WireGuard</span>
+        <span class="tag">OpenVPN</span>
+        <span class="tag">Tor</span>
+        <span class="tag">Shadowsocks</span>
+        <span class="tag">HTTP/3</span>
+        <span class="tag">DTLS</span>
+        <span class="tag">SRTP</span>
+        <span class="tag">gRPC</span>
+        <span class="tag">IPsec</span>
+        <span class="tag">L2TP</span>
+        <span class="tag">SSTP</span>
+        <span class="tag">IKEv2</span>
+        <span class="tag">SoftEther</span>
+        <span class="tag">AnyConnect</span>
+        <span class="tag">SSH</span>
+        <span class="tag">SOCKS5</span>
+        <span class="tag">V2Ray</span>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Capabilities</p>
+        <h3>项目亮点与实用性落点</h3>
+      </div>
+      <div class="capability-grid">
+        <article class="glass capability-card">
+          <h4>全协议兼容</h4>
+          <p>支持 TLS 1.3、QUIC、WireGuard 等 19 种协议解析，覆盖主流 VPN 与加密通信隧道，并保留一键扩展入口。新增协议可在 4 步内完成从样本接入到在线部署的全流程。</p>
+        </article>
+        <article class="glass capability-card">
+          <h4>复杂场景鲁棒</h4>
+          <p>面向 QQ、微信、Telegram、Signal、WhatsApp 等多应用混合流量环境，在真实网络噪声与丢包条件下保持 94% 以上综合识别成功率，单包时延低于 10ms。</p>
+        </article>
+        <article class="glass capability-card">
+          <h4>便捷自动化平台</h4>
+          <p>各模块既能独立执行单项分析任务，也能串联为完整的"捕获→分类→嗅探→溯源"链路，实现"一站式平台"定位，降低运营人员使用门槛。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Technical Flow -->
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Pipeline</p>
+        <h3>核心检测流水线</h3>
+        <p>从原始流量捕获到最终风险报告的全自动化处理链路。</p>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <span class="step-num">1</span>
+          <div><strong>流量捕获</strong><small>网卡镜像 / PCAP 存储</small></div>
+        </div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">
+          <span class="step-num">2</span>
+          <div><strong>多层分类</strong><small>VPN 分离 / 协议识别</small></div>
+        </div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">
+          <span class="step-num">3</span>
+          <div><strong>行为嗅探</strong><small>GATv2 双图推理</small></div>
+        </div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">
+          <span class="step-num">4</span>
+          <div><strong>群组溯源</strong><small>三维关系图谱匹配</small></div>
+        </div>
+        <span class="flow-arrow">&rarr;</span>
+        <div class="flow-step">
+          <span class="step-num">5</span>
+          <div><strong>报告输出</strong><small>风险评分 / 自动告警</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Innovation Points -->
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Innovation</p>
+        <h3>技术创新点</h3>
+      </div>
+      <div class="three-col">
+        <article class="info-card">
+          <div class="info-icon">&#9889;</div>
+          <h4>RIFA 对抗增强</h4>
+          <p>随机注入频率对抗 (Random Injection Frequency Adversarial) 策略，在训练阶段注入真实网络噪声模式，显著提升模型对混合流量的鲁棒性。</p>
+        </article>
+        <article class="info-card">
+          <div class="info-icon">&#128300;</div>
+          <h4>SODF 动态聚焦</h4>
+          <p>面向流量的序列化在线特征动态聚焦 (Serialized Online Dynamic Focusing)，在不牺牲吞吐的前提下提升对长流的特征捕获精度。</p>
+        </article>
+        <article class="info-card">
+          <div class="info-icon">&#128736;</div>
+          <h4>双图融合架构</h4>
+          <p>包级字节图捕获微观模式 + 流级拓扑图建模宏观交互，通过交叉注意力融合为 150 维统一表征，兼顾局部细节与全局上下文。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section">
+      <article class="glass chart-panel">
+        <div class="panel-header">
+          <h4>技术栈</h4>
+          <span>核心技术组件</span>
+        </div>
+        <div class="tag-cloud" style="margin-top:16px;">
+          <span class="tag featured">PyTorch</span>
+          <span class="tag featured">PyG (PyTorch Geometric)</span>
+          <span class="tag">GATv2</span>
+          <span class="tag">scapy</span>
+          <span class="tag">tshark</span>
+          <span class="tag">Redis</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">ClickHouse</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Prometheus</span>
+          <span class="tag">NGINX</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="index.html">密网巡哨 TrafficVigil</a> — Encrypted Traffic Governance Suite. All rights reserved.</p>
+    <p style="margin-top:8px;">密网巡哨 TrafficVigil 提供 7×24 持续监测，所有数据均经过多层校验与加密存储。</p>
+  </footer>
+
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

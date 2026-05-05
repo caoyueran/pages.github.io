@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据中心 — 密网巡哨 TrafficVigil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <div>
+        <p class="eyebrow">Encrypted Traffic Governance Suite</p>
+        <h1>密网巡哨 TrafficVigil</h1>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="index.html">首页</a>
+      <a href="dashboard.html" class="nav-current">数据中心</a>
+      <a href="workspace.html">功能中枢</a>
+      <a href="about.html">关于平台</a>
+    </nav>
+    <button class="ghost-button" onclick="location.href='workspace.html'">进入中枢</button>
+  </header>
+
+  <main class="page-transition">
+    <section class="section">
+      <div class="page-hero">
+        <p class="eyebrow">Data Center</p>
+        <h2>多源态势数据中心</h2>
+        <p>数据中心总览，覆盖识别成效、协议分布、风险频道与模块执行状态。</p>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="stat-grid">
+        <article class="glass stat-card">
+          <span class="stat-value" data-counter="18.42">0</span>
+          <span class="stat-label">混合流量捕获量 (TB)</span>
+          <span class="stat-change">近 24h 同比 +12.8%</span>
+        </article>
+        <article class="glass stat-card">
+          <span class="stat-value" data-counter="27">0</span>
+          <span class="stat-label">高风险群组告警</span>
+          <span class="stat-change">其中 11 个为新增关联</span>
+        </article>
+        <article class="glass stat-card">
+          <span class="stat-value" data-counter="19">0</span>
+          <span class="stat-label">支持协议簇</span>
+          <span class="stat-change">TLS 1.3 / QUIC / WireGuard</span>
+        </article>
+        <article class="glass stat-card">
+          <span class="stat-value" data-counter="8">0</span>
+          <span class="stat-label">在线分析节点</span>
+          <span class="stat-change">边缘探针与中心推理协同</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Two Column: App Coverage + Risk Feed -->
+    <section class="section">
+      <div class="two-col">
+        <article class="glass chart-panel">
+          <div class="panel-header">
+            <h4>应用覆盖热度</h4>
+            <span>混合流量识别成功率 94%</span>
+          </div>
+          <div class="heat-bar-group" id="appBars"></div>
+        </article>
+
+        <article class="glass chart-panel">
+          <div class="panel-header">
+            <h4>敏感频道预警</h4>
+            <span>公共流量形状关联</span>
+          </div>
+          <ul class="alert-list" id="riskFeed"></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Core Metrics Timeline -->
+    <section class="section">
+      <div class="two-col">
+        <article class="glass chart-panel">
+          <div class="panel-header">
+            <h4>检测链路执行状态</h4>
+            <span>四层流水线实时状态</span>
+          </div>
+          <div class="pipeline">
+            <div><span>01</span><strong>流量捕获</strong><small>网卡接口 / 批次缓存 / PCAP 回存</small></div>
+            <div><span>02</span><strong>多层分类</strong><small>VPN 分离 / 协议解析 / IM 流量提取</small></div>
+            <div><span>03</span><strong>行为嗅探</strong><small>包级图谱 / 流级拓扑 / GATv2 推理</small></div>
+            <div><span>04</span><strong>智能识别</strong><small>群组匹配 / 风险评分 / 报告导出</small></div>
+          </div>
+        </article>
+
+        <article class="glass chart-panel">
+          <div class="panel-header">
+            <h4>系统报告摘要</h4>
+            <button class="inline-button" id="refreshSummary">刷新摘要</button>
+          </div>
+          <div class="summary-card" id="summaryCard"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Risk Timeline -->
+    <section class="section">
+      <article class="glass chart-panel">
+        <div class="panel-header">
+          <h4>风险事件时间线</h4>
+          <span>近 6 小时关键事件</span>
+        </div>
+        <div class="v-timeline">
+          <div class="timeline-node">
+            <div class="time-label">22:14</div>
+            <div class="time-title">TLS 1.3 通道建立</div>
+            <div class="time-desc">接入新设备指纹，初始化行为基线。来源 IP 归属华中节点。</div>
+          </div>
+          <div class="timeline-node">
+            <div class="time-label">22:16</div>
+            <div class="time-title">QUIC 爆发流捕获</div>
+            <div class="time-desc">检测到频道浏览模式，包速率异常升高至基线 3.2 倍。</div>
+          </div>
+          <div class="timeline-node">
+            <div class="time-label">22:17</div>
+            <div class="time-title">高危群组关联命中</div>
+            <div class="time-desc">Telegram 批次与敏感群组 delta-node 产生高权重边，置信度 89.4%。</div>
+          </div>
+          <div class="timeline-node">
+            <div class="time-label">22:19</div>
+            <div class="time-title">跨协议跳转检测</div>
+            <div class="time-desc">Signal 转发流出现，命中跨协议交互特征规则。</div>
+          </div>
+          <div class="timeline-node">
+            <div class="time-label">22:20</div>
+            <div class="time-title">自动报告生成</div>
+            <div class="time-desc">推送关联告警至运营终端，附带 PCAP 批次索引与溯源路径。</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Model Performance Comparison -->
+    <section class="section">
+      <article class="glass chart-panel">
+        <div class="panel-header">
+          <h4>模型性能对比</h4>
+          <span>吞吐 / 内存占用 / 丢包率</span>
+        </div>
+        <div class="compare-list" id="vpnCompare"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="index.html">密网巡哨 TrafficVigil</a>. All rights reserved.</p>
+    <p style="margin-top:8px;">密网巡哨 TrafficVigil 提供 7×24 持续监测，所有数据均经过多层校验与加密存储。</p>
+  </footer>
+
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

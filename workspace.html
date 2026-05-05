@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>功能中枢 — 密网巡哨 TrafficVigil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <div>
+        <p class="eyebrow">Encrypted Traffic Governance Suite</p>
+        <h1>密网巡哨 TrafficVigil</h1>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="index.html">首页</a>
+      <a href="dashboard.html">数据中心</a>
+      <a href="workspace.html" class="nav-current">功能中枢</a>
+      <a href="about.html">关于平台</a>
+    </nav>
+    <button class="ghost-button" id="pulseButton">启动巡检</button>
+  </header>
+
+  <main class="page-transition">
+    <section class="section workspace" id="workspace">
+      <div class="section-heading">
+        <p class="eyebrow">Functional Hub</p>
+        <h3>功能完备的分析中枢</h3>
+        <p>以下模块均可独立执行，覆盖全部关键功能与输出结果。</p>
+      </div>
+
+      <div class="workspace-shell glass">
+        <aside class="workspace-nav">
+          <button class="tab-button active" data-tab="center">综合检测首页</button>
+          <button class="tab-button" data-tab="behavior">行为嗅探</button>
+          <button class="tab-button" data-tab="vpn">VPN 流量分析</button>
+          <button class="tab-button" data-tab="realtime">实时流量分析</button>
+          <button class="tab-button" data-tab="trace">群组匹配溯源</button>
+          <button class="tab-button" data-tab="model">协议扩展中心</button>
+        </aside>
+
+        <div class="workspace-stage">
+
+          <!-- ═══ Tab: Center ═══ -->
+          <section class="tab-panel active" data-panel="center">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow">Home Console</p>
+                <h4>综合检测平台首页</h4>
+              </div>
+              <div class="pill-row">
+                <span class="pill success">节点在线</span>
+                <span class="pill">多层分类链路已加载</span>
+              </div>
+            </div>
+            <div class="center-grid">
+              <article class="panel panel-feature">
+                <h5>四层检测链路</h5>
+                <div class="pipeline">
+                  <div><span>01</span><strong>流量捕获</strong><small>网卡接口 / 批次缓存 / PCAP 回存</small></div>
+                  <div><span>02</span><strong>多层分类</strong><small>VPN 分离 / 协议解析 / IM 流量提取</small></div>
+                  <div><span>03</span><strong>行为嗅探</strong><small>包级图谱 / 流级拓扑 / GATv2 推理</small></div>
+                  <div><span>04</span><strong>智能识别</strong><small>群组匹配 / 风险评分 / 报告导出</small></div>
+                </div>
+              </article>
+              <article class="panel panel-monitor">
+                <div class="panel-header">
+                  <h5>核心节点监视器</h5>
+                  <span>实时刷新</span>
+                </div>
+                <div class="signal-map" id="signalMap"></div>
+              </article>
+              <article class="panel panel-report">
+                <div class="panel-header">
+                  <h5>自动报告摘要</h5>
+                  <button class="inline-button" id="refreshSummary">刷新摘要</button>
+                </div>
+                <div id="summaryCard" class="summary-card"></div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ═══ Tab: Behavior ═══ -->
+          <section class="tab-panel" data-panel="behavior">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow">Behavior Sniffing</p>
+                <h4>加密即时通信流量行为嗅探</h4>
+              </div>
+              <button class="primary-button compact" id="runBehavior">上传 PCAP 并分析</button>
+            </div>
+            <div class="module-grid">
+              <article class="panel">
+                <h5>GNN 分析框架</h5>
+                <div class="gnn-diagram">
+                  <div>包级字节图</div>
+                  <div>流级拓扑图</div>
+                  <div>150 维融合特征</div>
+                  <div>3 层 GATv2</div>
+                  <div>行为分类输出</div>
+                </div>
+                <p class="module-note">基于包级与流级双图结构，通过交叉注意力融合实现行为分类。</p>
+              </article>
+              <article class="panel">
+                <div class="panel-header">
+                  <h5>分析进度</h5>
+                  <span id="behaviorStatus">等待任务</span>
+                </div>
+                <div class="progress-shell">
+                  <div class="progress-bar" id="behaviorProgress"></div>
+                </div>
+                <div class="result-stats" id="behaviorStats"></div>
+              </article>
+            </div>
+            <article class="panel wide-panel">
+              <div class="panel-header">
+                <h5>流量实例结果卡片</h5>
+                <span>主分类 / 次分类 / 置信度</span>
+              </div>
+              <div class="card-rail" id="behaviorCards"></div>
+            </article>
+          </section>
+
+          <!-- ═══ Tab: VPN ═══ -->
+          <section class="tab-panel" data-panel="vpn">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow">VPN Analysis</p>
+                <h4>VPN 与非 VPN 流量分析</h4>
+              </div>
+              <button class="primary-button compact" id="runVpn">执行检测</button>
+            </div>
+            <div class="module-grid">
+              <article class="panel">
+                <h5>技术原理说明</h5>
+                <div class="stack-blocks">
+                  <div><strong>预训练基础</strong><span>利用大规模通用流量学习底层语义，掌握端口模式与数据包关系。</span></div>
+                  <div><strong>微调优化</strong><span>结合 RIFA 增强与 SODF 策略，在复杂混合场景下取得 98.7% 准确率。</span></div>
+                </div>
+              </article>
+              <article class="panel">
+                <div class="panel-header">
+                  <h5>性能对比</h5>
+                  <span>吞吐 / 内存 / 丢包率</span>
+                </div>
+                <div class="compare-list" id="vpnCompare"></div>
+              </article>
+            </div>
+            <article class="panel wide-panel">
+              <div class="panel-header">
+                <h5>文件级检测结果</h5>
+                <span>红灰双色概率分布</span>
+              </div>
+              <div class="vpn-table" id="vpnTable"></div>
+            </article>
+          </section>
+
+          <!-- ═══ Tab: Realtime ═══ -->
+          <section class="tab-panel" data-panel="realtime">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow">Realtime Monitor</p>
+                <h4>流量实时分析与批次回放</h4>
+              </div>
+              <div class="dual-actions">
+                <button class="primary-button compact" id="startRealtime">启动实时抓取</button>
+                <button class="secondary-button compact" id="stopRealtime">停止</button>
+              </div>
+            </div>
+            <div class="module-grid realtime-grid">
+              <article class="panel">
+                <h5>捕获配置</h5>
+                <div class="config-list">
+                  <label><span>网卡接口</span><strong>Intel(R) Wi-Fi 6 AX201</strong></label>
+                  <label><span>批次包数</span><strong>512 / batch</strong></label>
+                  <label><span>回存策略</span><strong>每 5 秒落盘一次</strong></label>
+                  <label><span>监测应用</span><strong>Telegram 实时会话</strong></label>
+                </div>
+              </article>
+              <article class="panel">
+                <div class="panel-header">
+                  <h5>系统日志</h5>
+                  <span>stdout stream</span>
+                </div>
+                <div class="log-box" id="logBox"></div>
+              </article>
+              <article class="panel">
+                <div class="panel-header">
+                  <h5>行为分布</h5>
+                  <span>按包大小贡献估计</span>
+                </div>
+                <div class="behavior-share" id="behaviorShare"></div>
+              </article>
+            </div>
+            <article class="panel wide-panel">
+              <div class="panel-header">
+                <h5>批次滑轴回放</h5>
+                <span id="batchLabel">第 01 批次</span>
+              </div>
+              <input type="range" id="batchRange" min="0" max="5" value="0">
+              <div class="batch-grid">
+                <div class="batch-summary" id="batchSummary"></div>
+                <div class="batch-bars" id="batchBars"></div>
+              </div>
+            </article>
+          </section>
+
+          <!-- ═══ Tab: Trace ═══ -->
+          <section class="tab-panel" data-panel="trace">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow">Traceback Matching</p>
+                <h4>用户公共群组匹配与风险溯源</h4>
+              </div>
+              <button class="primary-button compact" id="runTrace">执行关联推理</button>
+            </div>
+            <div class="module-grid">
+              <article class="panel">
+                <h5>三维关系图谱</h5>
+                <div class="trace-map">
+                  <span class="node user">用户</span>
+                  <span class="node device">设备</span>
+                  <span class="node group">群组</span>
+                  <span class="trace-line line-a"></span>
+                  <span class="trace-line line-b"></span>
+                  <span class="trace-line line-c"></span>
+                </div>
+                <p class="module-note">融合流量元数据、时序模式和跨协议交互特征，实现群组成员嗅探与风险溯源。</p>
+              </article>
+              <article class="panel">
+                <div class="panel-header">
+                  <h5>匹配结果</h5>
+                  <span>Top 关联频道</span>
+                </div>
+                <div class="trace-list" id="traceList"></div>
+              </article>
+            </div>
+            <article class="panel wide-panel">
+              <div class="panel-header">
+                <h5>风险推理时间线</h5>
+                <span>跨协议行为关联</span>
+              </div>
+              <div class="timeline" id="timeline"></div>
+            </article>
+          </section>
+
+          <!-- ═══ Tab: Model ═══ -->
+          <section class="tab-panel" data-panel="model">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow">Protocol Studio</p>
+                <h4>协议兼容与模型扩展中心</h4>
+              </div>
+              <button class="primary-button compact" id="trainModel">一键再训练</button>
+            </div>
+            <div class="module-grid">
+              <article class="panel">
+                <h5>现有协议支持</h5>
+                <div class="protocol-cloud" id="protocolCloud"></div>
+              </article>
+              <article class="panel">
+                <h5>扩展流程</h5>
+                <ol class="flow-list">
+                  <li>接入新协议流量样本</li>
+                  <li>执行预训练特征迁移</li>
+                  <li>自动微调与鲁棒性增强</li>
+                  <li>部署在线识别能力</li>
+                </ol>
+                <div class="train-output" id="trainOutput"></div>
+              </article>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="index.html">密网巡哨 TrafficVigil</a>. All rights reserved.</p>
+    <p style="margin-top:8px;">密网巡哨 TrafficVigil 提供 7×24 持续监测，所有数据均经过多层校验与加密存储。</p>
+  </footer>
+
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
