@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>密网巡哨 TrafficVigil — 加密流量智能治理平台</title>
+  <meta name="description" content="融合多模态大数据的加密流量识别溯源系统，覆盖检测、分析、溯源与扩展全链路。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <header class="topbar" id="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <div>
+        <p class="eyebrow">Encrypted Traffic Governance Suite</p>
+        <h1>密网巡哨 TrafficVigil</h1>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="#hero" class="nav-current">首页</a>
+      <a href="#capabilities">核心能力</a>
+      <a href="#metrics">性能指标</a>
+      <a href="#innovation">创新点</a>
+      <a href="#comparison">方案对比</a>
+      <a href="#preview">平台预览</a>
+      <a href="#feedback">评审反馈</a>
+      <a href="dashboard.html">数据中心</a>
+      <a href="workspace.html">功能中枢</a>
+      <a href="about.html">关于平台</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ═══ HERO ═══ -->
+    <section class="hero-wrap" id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-content">
+        <div class="hero-badge-row">
+          <span class="badge teal">2026 年度创新项目</span>
+          <span class="badge gold">加密流量智能治理</span>
+        </div>
+        <h2 class="hero-title gradient-text">密网巡哨<br>TrafficVigil</h2>
+        <p class="hero-desc">
+          面向加密即时通信流量的全方位治理平台，融合预训练-微调双阶段模型、
+          双图融合 GNN 架构与三维关系图谱溯源，覆盖检测、分析、溯源与扩展全链路。
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#metrics">查看性能指标</a>
+          <a class="secondary-button" href="workspace.html">进入功能中枢</a>
+          <a class="secondary-button" href="#preview">平台界面预览</a>
+          <a class="secondary-button" href="#feedback">提交评审意见</a>
+        </div>
+        <div class="hero-kpi-row">
+          <div class="hero-kpi">
+            <span class="hero-kpi-num" data-counter="98.7">0</span>
+            <span class="hero-kpi-label">VPN 识别准确率</span>
+          </div>
+          <div class="hero-kpi-divider"></div>
+          <div class="hero-kpi">
+            <span class="hero-kpi-num" data-counter="90.2">0</span>
+            <span class="hero-kpi-label">行为分析准确率</span>
+          </div>
+          <div class="hero-kpi-divider"></div>
+          <div class="hero-kpi">
+            <span class="hero-kpi-num" data-counter="89.4">0</span>
+            <span class="hero-kpi-label">群组匹配准确率</span>
+          </div>
+          <div class="hero-kpi-divider"></div>
+          <div class="hero-kpi">
+            <span class="hero-kpi-num" data-counter="6.32">0</span>
+            <span class="hero-kpi-label">系统吞吐 (Gbps)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Radar Visual -->
+      <div class="hero-radar-glass">
+        <div class="radar">
+          <div class="radar-ring ring-1"></div>
+          <div class="radar-ring ring-2"></div>
+          <div class="radar-ring ring-3"></div>
+          <div class="radar-sweep"></div>
+          <span class="radar-point point-1"></span>
+          <span class="radar-point point-2"></span>
+          <span class="radar-point point-3"></span>
+          <span class="radar-point point-4"></span>
+        </div>
+        <div class="radar-info">
+          <div class="radar-info-item"><label>当前监测域</label><strong>华中区域骨干网</strong></div>
+          <div class="radar-info-item"><label>活跃应用覆盖</label><strong>Telegram / Signal / WhatsApp / WeChat / QQ / Tor</strong></div>
+          <div class="radar-info-tags">
+            <span><b>6.32 Gbps</b> 吞吐</span>
+            <span><b>10 ms</b> 单包时延</span>
+            <span><b>94%</b> 混合流量识别</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <div class="mouse-icon"></div>
+        <span>向下滚动了解详情</span>
+      </div>
+    </section>
+
+    <!-- ═══ PROBLEM & SOLUTION ═══ -->
+    <section class="section reveal-section" id="problem">
+      <div class="section-heading">
+        <p class="eyebrow">The Challenge & Our Response</p>
+        <h3>加密流量治理的时代挑战与我们的方案</h3>
+        <p>随着 TLS 1.3、QUIC、WireGuard 等新型加密协议的广泛部署，传统 DPI 技术已无法有效识别加密流量中的通信行为与安全威胁。</p>
+      </div>
+      <div class="two-col">
+        <article class="glass ps-card ps-pain">
+          <div class="ps-card-header">
+            <span class="ps-icon">&#128308;</span>
+            <h4>行业痛点</h4>
+          </div>
+          <ul class="ps-list">
+            <li>
+              <strong>加密协议多样化</strong>
+              <p>TLS 1.3、QUIC、WireGuard 等协议导致流量不可见，传统 DPI 方案面临失效风险。</p>
+            </li>
+            <li>
+              <strong>VPN 混淆流量激增</strong>
+              <p>VPN 流量占比已超 30%，现有方案在混合 VPN / 非 VPN 场景下准确率不足 70%。</p>
+            </li>
+            <li>
+              <strong>行为特征隐蔽化</strong>
+              <p>加密 IM 中图片、文件、音视频行为难以区分，现有工具仅能识别协议类型而无法深入行为层面。</p>
+            </li>
+            <li>
+              <strong>群组关联困难</strong>
+              <p>跨协议、跨平台的用户行为碎片化，缺乏有效的关联溯源手段。</p>
+            </li>
+          </ul>
+        </article>
+        <article class="glass ps-card ps-solution">
+          <div class="ps-card-header">
+            <span class="ps-icon">&#128994;</span>
+            <h4>我们的方案</h4>
+          </div>
+          <ul class="ps-list">
+            <li>
+              <strong>预训练-微调双阶段模型</strong>
+              <p>大规模通用流量预训练 + RIFA 对抗增强，实现 <em>98.7%</em> VPN 识别准确率。</p>
+            </li>
+            <li>
+              <strong>双图融合 GNN 架构</strong>
+              <p>包级字节图 + 流级拓扑图，通过 GATv2 推理实现 <em>90.2%</em> 的 5 类精细行为分类。</p>
+            </li>
+            <li>
+              <strong>三维关系图谱溯源</strong>
+              <p>用户-设备-群组三维关联，融合时序模式与跨协议交互特征，实现 <em>89.4%</em> 群组匹配率。</p>
+            </li>
+            <li>
+              <strong>全协议可扩展平台</strong>
+              <p>覆盖 19 种协议，仅需 4 步即可完成新协议接入，构建完整的一站式治理平台。</p>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══ CORE CAPABILITIES ═══ -->
+    <section class="section reveal-section" id="capabilities">
+      <div class="section-heading">
+        <p class="eyebrow">Core Capabilities</p>
+        <h3>平台核心能力</h3>
+        <p>三大核心引擎覆盖 VPN 分离、行为嗅探与群组溯源全链路</p>
+      </div>
+      <div class="three-col">
+        <article class="cap-card">
+          <div class="cap-card-icon">&#128737;</div>
+          <h4>VPN 流量分离</h4>
+          <p>基于预训练-微调框架，结合 <strong>RIFA 对抗增强</strong>与 <strong>SODF 动态聚焦</strong>策略，在混合流量中以 <b class="hi">98.7%</b> 准确率分离 VPN 与非 VPN 流量，系统吞吐达 6.32 Gbps。</p>
+          <div class="cap-card-tech">
+            <span>预训练-微调</span><span>RIFA 增强</span><span>SODF 聚焦</span>
+          </div>
+        </article>
+        <article class="cap-card">
+          <div class="cap-card-icon">&#128270;</div>
+          <h4>行为嗅探引擎</h4>
+          <p>创新 <strong>双图融合架构</strong>：包级字节图捕获微观模式 + 流级拓扑图建模宏观交互，3 层 GATv2 推理输出 <b class="hi">90.2%</b> 的 5 类精细行为分类准确率。</p>
+          <div class="cap-card-tech">
+            <span>包级字节图</span><span>流级拓扑图</span><span>GATv2</span>
+          </div>
+        </article>
+        <article class="cap-card">
+          <div class="cap-card-icon">&#128225;</div>
+          <h4>群组关联溯源</h4>
+          <p>融合时序模式与跨协议交互特征，构建 <strong>用户-设备-群组</strong>三维关系图谱，实现 <b class="hi">89.4%</b> 的群组匹配准确率与端到端风险溯源。</p>
+          <div class="cap-card-tech">
+            <span>三维图谱</span><span>时序模式</span><span>跨协议关联</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══ PERFORMANCE METRICS ═══ -->
+    <section class="section reveal-section" id="metrics">
+      <div class="section-heading">
+        <p class="eyebrow">Performance Benchmark</p>
+        <h3>核心性能指标</h3>
+        <p>以下指标基于真实混合流量环境（Telegram / Signal / WhatsApp / WeChat / QQ 混合）下的系统性能测试</p>
+      </div>
+      <div class="stat-grid">
+        <article class="stat-card">
+          <span class="stat-value" data-counter="98.7">0</span>
+          <span class="stat-unit">%</span>
+          <span class="stat-label">VPN 识别准确率</span>
+          <span class="stat-change up">RIFA 增强 + SODF 策略</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="90.2">0</span>
+          <span class="stat-unit">%</span>
+          <span class="stat-label">行为分析准确率</span>
+          <span class="stat-change up">双图 GATv2 融合推理</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="89.4">0</span>
+          <span class="stat-unit">%</span>
+          <span class="stat-label">群组匹配准确率</span>
+          <span class="stat-change up">三维图谱关联匹配</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="6.32">0</span>
+          <span class="stat-unit">Gbps</span>
+          <span class="stat-label">系统吞吐量</span>
+          <span class="stat-change up">单节点稳定输出</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="10">0</span>
+          <span class="stat-unit">ms</span>
+          <span class="stat-label">单包处理时延</span>
+          <span class="stat-change up">边缘探针近实时响应</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="94">0</span>
+          <span class="stat-unit">%</span>
+          <span class="stat-label">综合识别成功率</span>
+          <span class="stat-change up">混合流量环境实测</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="19">0</span>
+          <span class="stat-unit">种</span>
+          <span class="stat-label">支持协议簇</span>
+          <span class="stat-change up">4 步扩展新协议</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-counter="150">0</span>
+          <span class="stat-unit">维</span>
+          <span class="stat-label">融合特征维度</span>
+          <span class="stat-change up">包级 + 流级双模态</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══ INNOVATION ═══ -->
+    <section class="section reveal-section" id="innovation">
+      <div class="section-heading">
+        <p class="eyebrow">Technical Innovation</p>
+        <h3>技术创新点</h3>
+        <p>三项原创技术构成平台核心竞争力</p>
+      </div>
+      <div class="three-col">
+        <article class="innov-card">
+          <div class="innov-card-top">
+            <span class="innov-num">01</span>
+            <h4>RIFA 对抗增强策略</h4>
+          </div>
+          <p>随机注入频率对抗 (Random Injection Frequency Adversarial) 策略，在训练阶段注入真实网络噪声模式，显著提升模型对混合流量的鲁棒性。相比传统数据增强方法，准确率提升 <b class="hi">8.3%</b>。</p>
+          <div class="innov-card-visual">
+            <div class="innov-bar-group">
+              <div class="innov-bar-label">传统增强</div><div class="innov-bar-shell"><div class="innov-bar-fill" style="width:72%"></div></div><div class="innov-bar-val">72%</div>
+              <div class="innov-bar-label">RIFA 增强</div><div class="innov-bar-shell"><div class="innov-bar-fill accent" style="width:96%"></div></div><div class="innov-bar-val hi">96%</div>
+            </div>
+          </div>
+        </article>
+        <article class="innov-card">
+          <div class="innov-card-top">
+            <span class="innov-num">02</span>
+            <h4>SODF 动态聚焦策略</h4>
+          </div>
+          <p>面向流量的序列化在线动态聚焦 (Serialized Online Dynamic Focusing)，在不牺牲吞吐的前提下提升对长流的特征捕获精度。单包时延控制在 <b class="hi">10ms</b> 以内，实现实时级响应。</p>
+          <div class="innov-card-visual">
+            <div class="innov-bar-group">
+              <div class="innov-bar-label">固定窗口</div><div class="innov-bar-shell"><div class="innov-bar-fill" style="width:65%"></div></div><div class="innov-bar-val">65%</div>
+              <div class="innov-bar-label">SODF 动态</div><div class="innov-bar-shell"><div class="innov-bar-fill accent" style="width:93%"></div></div><div class="innov-bar-val hi">93%</div>
+            </div>
+          </div>
+        </article>
+        <article class="innov-card">
+          <div class="innov-card-top">
+            <span class="innov-num">03</span>
+            <h4>双图融合 GNN 架构</h4>
+          </div>
+          <p>包级字节图捕获微观模式 + 流级拓扑图建模宏观交互，通过交叉注意力融合为 <b class="hi">150 维</b>统一表征，兼顾局部细节与全局上下文，实现 5 类精细行为分类。</p>
+          <div class="innov-card-visual dual-graph-viz">
+            <div class="dg-node">包级<br>字节图</div>
+            <div class="dg-fusion">&harr; 交叉注意力融合 &harr;</div>
+            <div class="dg-node">流级<br>拓扑图</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══ COMPARISON ═══ -->
+    <section class="section reveal-section" id="comparison">
+      <div class="section-heading">
+        <p class="eyebrow">Competitive Advantage</p>
+        <h3>与同类方案全面对比</h3>
+        <p>在 VPN 识别准确率、系统吞吐、内存占用等 7 个维度上全面领先</p>
+      </div>
+      <div class="compare-wrapper">
+        <table class="compare-table-full">
+          <thead>
+            <tr>
+              <th>对比指标</th>
+              <th>AppScanner</th>
+              <th>GraphDApp</th>
+              <th>ET-BERT</th>
+              <th class="our-col">TrafficVigil<br><small>（本作品）</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>VPN 识别准确率</td>
+              <td class="lose">58%</td>
+              <td class="lose">65%</td>
+              <td class="mid">81%</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> 98.7%</td>
+            </tr>
+            <tr>
+              <td>系统吞吐量</td>
+              <td class="lose">3.67 Gbps</td>
+              <td class="lose">4.12 Gbps</td>
+              <td class="mid">5.14 Gbps</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> 6.32 Gbps</td>
+            </tr>
+            <tr>
+              <td>内存占用</td>
+              <td class="lose">2143 MB</td>
+              <td class="lose">1875 MB</td>
+              <td class="mid">1628 MB</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> 789 MB</td>
+            </tr>
+            <tr>
+              <td>丢包率</td>
+              <td class="lose">42.6‰</td>
+              <td class="lose">35.1‰</td>
+              <td class="mid">27.9‰</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> 6.5‰</td>
+            </tr>
+            <tr>
+              <td>行为分类能力</td>
+              <td class="lose">&#10007; 不支持</td>
+              <td class="lose">&#10007; 不支持</td>
+              <td class="mid">&#10003; 基础分类</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> &#10003; 5 类精细分类</td>
+            </tr>
+            <tr>
+              <td>群组溯源能力</td>
+              <td class="lose">&#10007; 不支持</td>
+              <td class="lose">&#10007; 不支持</td>
+              <td class="lose">&#10007; 不支持</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> &#10003; 三维图谱溯源</td>
+            </tr>
+            <tr>
+              <td>协议扩展能力</td>
+              <td class="lose">手动配置</td>
+              <td class="lose">手动配置</td>
+              <td class="mid">半自动</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> &#10003; 一键 4 步接入</td>
+            </tr>
+            <tr>
+              <td>支持协议数量</td>
+              <td class="lose">6 种</td>
+              <td class="lose">8 种</td>
+              <td class="mid">12 种</td>
+              <td class="win"><span class="rank-badge">&#127942;</span> 19 种</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="compare-chart-row">
+        <div class="compare-chart-item">
+          <div class="compare-chart-label">VPN 识别准确率对比</div>
+          <div class="compare-bars">
+            <div class="cbar-group">
+              <span class="cbar-name">AppScanner</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-low" style="width:58%"></div></div>
+              <span class="cbar-val">58%</span>
+            </div>
+            <div class="cbar-group">
+              <span class="cbar-name">GraphDApp</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-low" style="width:65%"></div></div>
+              <span class="cbar-val">65%</span>
+            </div>
+            <div class="cbar-group">
+              <span class="cbar-name">ET-BERT</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-mid" style="width:81%"></div></div>
+              <span class="cbar-val">81%</span>
+            </div>
+            <div class="cbar-group our">
+              <span class="cbar-name">TrafficVigil</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-high" style="width:98.7%"></div></div>
+              <span class="cbar-val win-val">98.7%</span>
+            </div>
+          </div>
+        </div>
+        <div class="compare-chart-item">
+          <div class="compare-chart-label">内存占用对比 (MB)</div>
+          <div class="compare-bars">
+            <div class="cbar-group">
+              <span class="cbar-name">AppScanner</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-bad" style="width:100%"></div></div>
+              <span class="cbar-val">2143</span>
+            </div>
+            <div class="cbar-group">
+              <span class="cbar-name">GraphDApp</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-bad" style="width:87%"></div></div>
+              <span class="cbar-val">1875</span>
+            </div>
+            <div class="cbar-group">
+              <span class="cbar-name">ET-BERT</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-mid2" style="width:76%"></div></div>
+              <span class="cbar-val">1628</span>
+            </div>
+            <div class="cbar-group our">
+              <span class="cbar-name">TrafficVigil</span>
+              <div class="cbar-shell"><div class="cbar-fill cbar-best" style="width:37%"></div></div>
+              <span class="cbar-val win-val">789</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PLATFORM PREVIEW ═══ -->
+    <section class="section reveal-section" id="preview">
+      <div class="section-heading">
+        <p class="eyebrow">Platform Preview</p>
+        <h3>平台界面与核心功能预览</h3>
+        <p>简洁高效的深色主题仪表板，实时呈现流量态势、分析结果与溯源链路</p>
+      </div>
+
+      <!-- Screenshot area — replace src with actual screenshots -->
+      <div class="preview-grid">
+        <div class="preview-card">
+          <div class="preview-card-head">
+            <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+            <span class="preview-title">数据中心 — 多源态势总览</span>
+          </div>
+          <div class="preview-card-body">
+            <div class="preview-stats-row">
+              <div class="preview-stat-block"></div>
+              <div class="preview-stat-block"></div>
+              <div class="preview-stat-block"></div>
+              <div class="preview-stat-block"></div>
+            </div>
+            <div class="preview-chart-row">
+              <div class="preview-chart">
+                <div class="preview-bars">
+                  <span style="height:94%"></span><span style="height:86%"></span>
+                  <span style="height:79%"></span><span style="height:74%"></span>
+                  <span style="height:66%"></span><span style="height:58%"></span>
+                </div>
+              </div>
+              <div class="preview-chart">
+                <div class="preview-line-chart"></div>
+              </div>
+            </div>
+            <div class="preview-pipeline">
+              <div><span>01</span> 流量捕获</div>
+              <div><span>02</span> 多层分类</div>
+              <div><span>03</span> 行为嗅探</div>
+              <div><span>04</span> 溯源报告</div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-head">
+            <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+            <span class="preview-title">功能中枢 — VPN 流量分析</span>
+          </div>
+          <div class="preview-card-body">
+            <div class="preview-stack">
+              <div><strong>预训练基础</strong><span>利用大规模通用流量学习底层语义</span></div>
+              <div><strong>微调优化</strong><span>RIFA 增强 + SODF 策略，98.7% 准确率</span></div>
+            </div>
+            <div class="preview-compare">
+              <div class="preview-compare-item">
+                <span>AppScanner</span>
+                <div class="preview-mini-bar"><span style="width:58%"></span></div>
+              </div>
+              <div class="preview-compare-item">
+                <span>TrafficVigil</span>
+                <div class="preview-mini-bar"><span style="width:96%"></span></div>
+              </div>
+            </div>
+            <div class="preview-vpn-rows">
+              <div class="preview-vpn-row">
+                <strong>cross_mix_01.pcap</strong><span class="tag-vpn">VPN</span>
+                <div class="preview-prob"><span style="width:92%"></span><span style="width:8%"></span></div>
+              </div>
+              <div class="preview-vpn-row">
+                <strong>office_tls_02.pcap</strong><span class="tag-nonvpn">Non-VPN</span>
+                <div class="preview-prob"><span style="width:14%"></span><span style="width:86%"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-head">
+            <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+            <span class="preview-title">功能中枢 — 行为嗅探分析</span>
+          </div>
+          <div class="preview-card-body">
+            <div class="preview-gnn">
+              <span>包级字节图</span><span>&rarr;</span><span>流级拓扑图</span><span>&rarr;</span><span>150 维融合</span><span>&rarr;</span><span>3 层 GATv2</span>
+            </div>
+            <div class="preview-behavior-cards">
+              <div class="preview-bcard">
+                <small>pcap_batch_001</small>
+                <strong>图片传输</strong>
+                <span>置信度 93.8%</span>
+              </div>
+              <div class="preview-bcard">
+                <small>pcap_batch_002</small>
+                <strong>文件投递</strong>
+                <span>置信度 88.2%</span>
+              </div>
+              <div class="preview-bcard">
+                <small>pcap_batch_003</small>
+                <strong>语音通话</strong>
+                <span>置信度 84.7%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-head">
+            <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+            <span class="preview-title">功能中枢 — 群组匹配溯源</span>
+          </div>
+          <div class="preview-card-body">
+            <div class="preview-trace-map">
+              <span class="pt-node">用户</span>
+              <span class="pt-node">设备</span>
+              <span class="pt-node">群组</span>
+            </div>
+            <div class="preview-trace-results">
+              <div class="preview-trace-item">
+                <strong>delta-node / Telegram</strong>
+                <span class="hi">89.4%</span>
+              </div>
+              <div class="preview-trace-item">
+                <strong>silent-market / Signal</strong>
+                <span class="hi">84.1%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PIPELINE ═══ -->
+    <section class="section reveal-section" id="pipeline">
+      <div class="section-heading">
+        <p class="eyebrow">Detection Pipeline</p>
+        <h3>核心检测流水线</h3>
+        <p>从原始流量捕获到最终风险报告的全自动化处理链路</p>
+      </div>
+      <div class="pipeline-viz">
+        <div class="pipe-step">
+          <div class="pipe-num">1</div>
+          <div class="pipe-content">
+            <strong>流量捕获</strong>
+            <small>网卡镜像 / PCAP 存储</small>
+          </div>
+        </div>
+        <div class="pipe-connector"><span>&rarr;</span></div>
+        <div class="pipe-step">
+          <div class="pipe-num">2</div>
+          <div class="pipe-content">
+            <strong>多层分类</strong>
+            <small>VPN 分离 / 协议识别</small>
+          </div>
+        </div>
+        <div class="pipe-connector"><span>&rarr;</span></div>
+        <div class="pipe-step">
+          <div class="pipe-num">3</div>
+          <div class="pipe-content">
+            <strong>行为嗅探</strong>
+            <small>GATv2 双图推理</small>
+          </div>
+        </div>
+        <div class="pipe-connector"><span>&rarr;</span></div>
+        <div class="pipe-step">
+          <div class="pipe-num">4</div>
+          <div class="pipe-content">
+            <strong>群组溯源</strong>
+            <small>三维图谱匹配</small>
+          </div>
+        </div>
+        <div class="pipe-connector"><span>&rarr;</span></div>
+        <div class="pipe-step">
+          <div class="pipe-num">5</div>
+          <div class="pipe-content">
+            <strong>报告输出</strong>
+            <small>风险评分 / 自动告警</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROTOCOL MATRIX ═══ -->
+    <section class="section reveal-section" id="protocols">
+      <div class="section-heading">
+        <p class="eyebrow">Protocol Matrix</p>
+        <h3>全协议兼容矩阵</h3>
+        <p>覆盖 19 种主流加密通信协议，新协议可在 4 步内完成接入</p>
+      </div>
+      <div class="protocol-grid">
+        <span class="ptag featured">TLS 1.3</span>
+        <span class="ptag featured">QUIC</span>
+        <span class="ptag featured">WireGuard</span>
+        <span class="ptag">OpenVPN</span>
+        <span class="ptag">Tor</span>
+        <span class="ptag">Shadowsocks</span>
+        <span class="ptag">HTTP/3</span>
+        <span class="ptag">DTLS</span>
+        <span class="ptag">SRTP</span>
+        <span class="ptag">gRPC</span>
+        <span class="ptag">IPsec</span>
+        <span class="ptag">L2TP</span>
+        <span class="ptag">SSTP</span>
+        <span class="ptag">IKEv2</span>
+        <span class="ptag">SoftEther</span>
+        <span class="ptag">AnyConnect</span>
+        <span class="ptag">SSH</span>
+        <span class="ptag">SOCKS5</span>
+        <span class="ptag">V2Ray</span>
+      </div>
+      <div class="protocol-extend-flow">
+        <div class="pef-step">
+          <span class="pef-num">01</span>
+          <strong>接入样本</strong>
+          <small>新协议流量捕获</small>
+        </div>
+        <span class="pef-arrow">&rarr;</span>
+        <div class="pef-step">
+          <span class="pef-num">02</span>
+          <strong>特征迁移</strong>
+          <small>预训练特征复用</small>
+        </div>
+        <span class="pef-arrow">&rarr;</span>
+        <div class="pef-step">
+          <span class="pef-num">03</span>
+          <strong>自动微调</strong>
+          <small>RIFA 鲁棒性增强</small>
+        </div>
+        <span class="pef-arrow">&rarr;</span>
+        <div class="pef-step">
+          <span class="pef-num">04</span>
+          <strong>在线部署</strong>
+          <small>一键上线识别</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ JUDGE FEEDBACK ═══ -->
+    <section class="section reveal-section" id="feedback">
+      <div class="section-heading">
+        <p class="eyebrow">Judge Feedback</p>
+        <h3>评审意见与建议</h3>
+        <p>欢迎各位评审专家提出宝贵意见，我们将认真对待每一条反馈并持续优化</p>
+      </div>
+      <div class="feedback-panel">
+        <div class="feedback-panel-header">
+          <h4>&#128221; 提交评审意见</h4>
+          <p>您的建议将帮助我们持续优化平台功能与体验</p>
+        </div>
+        <form class="feedback-form" id="feedbackForm" onsubmit="event.preventDefault(); submitFeedback();">
+          <div class="feedback-form-grid">
+            <div class="ff-field">
+              <label>您的姓名 / 单位</label>
+              <input type="text" id="fbName" placeholder="可选填写" maxlength="50">
+            </div>
+            <div class="ff-field">
+              <label>评审维度 <span class="required">*</span></label>
+              <select id="fbDimension" required>
+                <option value="">请选择评审维度</option>
+                <option value="innovation">技术创新性</option>
+                <option value="performance">性能指标表现</option>
+                <option value="completeness">功能完整性</option>
+                <option value="usability">平台易用性</option>
+                <option value="applicability">实际应用价值</option>
+                <option value="overall">整体综合评价</option>
+              </select>
+            </div>
+            <div class="ff-field">
+              <label>评分 (1-10) <span class="required">*</span></label>
+              <select id="fbScore" required>
+                <option value="">请选择评分</option>
+                <option value="10">10 — 卓越</option>
+                <option value="9">9 — 优秀</option>
+                <option value="8">8 — 很好</option>
+                <option value="7">7 — 良好</option>
+                <option value="6">6 — 中等</option>
+                <option value="5">5 — 一般</option>
+                <option value="4">4 — 需改进</option>
+                <option value="3">3 — 较差</option>
+                <option value="2">2 — 差</option>
+                <option value="1">1 — 很差</option>
+              </select>
+            </div>
+            <div class="ff-field">
+              <label>亮点与优势</label>
+              <input type="text" id="fbStrength" placeholder="您认为本作品最突出的优势是什么？" maxlength="200">
+            </div>
+            <div class="ff-field full">
+              <label>改进建议 <span class="required">*</span></label>
+              <textarea id="fbSuggestion" placeholder="请详细描述您的改进建议，帮助我们做得更好..." required maxlength="1000"></textarea>
+            </div>
+          </div>
+          <div class="feedback-form-actions">
+            <button type="submit" class="primary-button">提交评审意见</button>
+            <span class="ff-char-count" id="fbCharCount">0/1000</span>
+          </div>
+        </form>
+        <div class="feedback-success" id="fbSuccess">
+          &#10003; 感谢您的评审意见！您的反馈已记录，将帮助我们持续改进平台。
+        </div>
+      </div>
+      <div class="feedback-list-panel show" id="fbList">
+        <div class="feedback-list-header">
+          <h4>评审意见列表</h4>
+          <span id="fbCount">共 0 条反馈</span>
+        </div>
+        <div class="feedback-entries" id="fbEntries">
+          <p class="fb-empty">暂无评审意见，欢迎首位评审专家留下宝贵建议。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TECH STACK ═══ -->
+    <section class="section reveal-section" id="techstack">
+      <div class="section-heading">
+        <p class="eyebrow">Tech Stack</p>
+        <h3>技术栈</h3>
+      </div>
+      <div class="techstack-grid">
+        <span class="ptag featured">PyTorch</span>
+        <span class="ptag featured">PyG (PyTorch Geometric)</span>
+        <span class="ptag">GATv2</span>
+        <span class="ptag">scapy</span>
+        <span class="ptag">tshark</span>
+        <span class="ptag">Redis</span>
+        <span class="ptag">PostgreSQL</span>
+        <span class="ptag">FastAPI</span>
+        <span class="ptag">ClickHouse</span>
+        <span class="ptag">Docker</span>
+        <span class="ptag">Kubernetes</span>
+        <span class="ptag">Grafana</span>
+        <span class="ptag">Prometheus</span>
+        <span class="ptag">NGINX</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand-mark">
+          <span></span><span></span><span></span>
+        </div>
+        <strong>密网巡哨 TrafficVigil</strong>
+      </div>
+      <p class="footer-desc">Encrypted Traffic Governance Suite — 面向加密即时通信流量的全方位治理平台</p>
+      <p class="footer-copy">&copy; 2026 密网巡哨 TrafficVigil. All rights reserved. 提供 7×24 持续监测，所有数据均经过多层校验与加密存储。</p>
+    </div>
+  </footer>
+
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
